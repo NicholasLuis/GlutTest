@@ -23,9 +23,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME} "${CMAKE_SOURCE_DIR}/lib/freeglut.li
 
 Also, follow this file path: .../build/debug/
 
-Copy and paste the .dll file into that folder
-
-(note that your project needs to be built first such as by running build.sh)
+Copy and paste the .dll file into that folder. Note that your project needs to be built first such as by running build.sh. Also note that you will have to do this everytime you run build.sh because it deletes all the contents of the folder before re-making it
 
 
 ### Find the .h files and copy it into your project folder

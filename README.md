@@ -17,7 +17,9 @@ Extract the files.
 Note: There are folders titled "x64". Use these files instead if your operating system is 64-bit
 
 Add this to the bottom of your CMakeLists.txt:
-	target_link_libraries(${CMAKE_PROJECT_NAME} "${CMAKE_SOURCE_DIR}/lib/freeglut.lib") # <-- CHANGE THE FILEPATH DEPENDING ON WHERE YOU COPIED THE FILES INTO. In this example, I have a folder called "lib"
+```
+target_link_libraries(${CMAKE_PROJECT_NAME} "${CMAKE_SOURCE_DIR}/lib/freeglut.lib") # <-- CHANGE THE FILEPATH DEPENDING ON WHERE YOU COPIED THE FILES INTO. In this example, I have a folder called "lib"
+```
 
 Also, follow this file path: .../build/debug/
 Copy and paste the .dll file into that folder

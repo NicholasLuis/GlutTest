@@ -6,6 +6,9 @@ project(graphicLibTest)
 
 include(CTest)
 enable_testing()
+
+include_directories(${CMAKE_SOURCE_DIR}/include) # include header files
+
 # Dependencies
 find_package(OpenGL REQUIRED)
 include(FetchContent)
@@ -29,11 +32,16 @@ glew
 GIT_REPOSITORY https://github.com/Perlmint/glew-cmake.git
 )
 FetchContent_MakeAvailable(glew)
+
 # Our Project
-set(SOURCE_FILES
-main.cpp)
+set(SOURCE_FILES src/main.cpp)
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 target_link_libraries(${PROJECT_NAME} OpenGL::GL glfw libglew_static)
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
+
+target_link_libraries(${CMAKE_PROJECT_NAME}
+"${CMAKE_SOURCE_DIR}/lib/freeglut.lib")
+
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME})
